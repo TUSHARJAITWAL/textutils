@@ -1,0 +1,37 @@
+<%= link_to 'All Contacts', contacts_path, class: 'btn btn-primary my-3' %>
+<%= form_with model: @contact do |form| %>
+    <% if @contact.errors.any? %>
+    <% @contact.errors.full_messages.each do |message| %>
+    <p><%= message  %></p>
+    <% end %>
+    <% end %>
+  
+    <div>
+      <%= form.label :first_name %><br>
+      <%= form.text_field :first_name, class: 'set-width' %>
+    </div>
+    <br>
+
+    <div>
+        <%= form.label :last_name %><br>
+        <%= form.text_field :last_name, class: 'set-width' %>
+    </div>
+    <br>
+  
+    <div>
+      <%= form.label :email %><br>
+      <%= form.email_field :email, class: 'set-width' %>
+    </div>
+    <br>
+
+    <div>
+        <%= form.label :phone %><br>
+        <%= form.number_field :phone, class: 'set-width' %>
+    </div>
+    <br>
+    <div>
+      <%= form.submit class: "btn btn-warning"%>
+    </div><br>
+  
+    <%= link_to 'Back',posts_path,class: "btn btn-primary"%>
+  <% end %>

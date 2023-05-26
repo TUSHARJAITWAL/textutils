@@ -1,0 +1,25 @@
+<%= form_with model: post do |form| %>
+
+    <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |message| %>
+    <p><%= message  %></p>
+    <% end %>
+    <% end %>
+  
+    <div>
+      <%= form.label :title %><br>
+      <%= form.text_field :title, class: 'set-width' %>
+    </div>
+    <br>
+  
+    <div>
+      <%= form.label :text %><br>
+      <%= form.text_field :text, class: 'set-width' %>
+    </div>
+    <br>
+    <div>
+      <%= form.submit class: "btn btn-warning"%>
+    </div><br>
+  
+    <%= link_to 'Back',posts_path,class: "btn btn-primary"%>
+  <% end %>

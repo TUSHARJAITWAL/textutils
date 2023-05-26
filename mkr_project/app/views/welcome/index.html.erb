@@ -1,0 +1,20 @@
+<div class="container">
+<h2 class='my-3 text-center' style="color:blue;"><b>We Can Get Current Time Of Every Countries</b></h2>
+<main class="container mv-2 my-4 transparent">
+<div class="bg-warning p-5 rounded">
+<%= form_tag(welcome_index_path, :method => "get",   
+class: 'navbar-form navbar-left') do %>  
+    <div class="input-group">  
+    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+    <div class="input-group-btn">  
+    <%= button_tag "Search", :class => 'btn btn-success glyphicon glyphicon-search mx-2',:name => nil%>  
+    </div> 
+    </div>  
+    <% end %>
+    <br/>
+    <h1><%= @country_name&.titleize %> Current Time Is :- <span ><%= @current_time&.strftime("%A %d-%m-%Y %H:%M:%S") %></span> </h1>
+    <hr style="color:red;">
+    <a class="btn btn-lg btn-danger" href="#" role="button">Refresh</a>
+    </div>
+    </main>
+</div>
